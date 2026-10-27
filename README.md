@@ -251,11 +251,11 @@ The scene also contains a deliberately positioned spherical layer and 16 spheric
 
 The renderer is based on the rendering equation:
 
-\[
+$$
 
 L_o(x,\omega_o)=L_e(x,\omega_o)+\int_{\Omega}f_r(x,\omega_i,\omega_o)L_i(x,\omega_i)\cos\theta_i\,d\omega_i
 
-\]
+$$
 
 Monte Carlo sampling estimates the integral using the sampled-direction estimator:
 
@@ -283,29 +283,29 @@ The current hard path limit is 30 bounces, with Russian roulette beginning after
 
 Diffuse surfaces use:
 
-\[
+$$
 
 f_r=\frac{\rho}{\pi}
 
-\]
+$$
 
 with cosine-weighted sampling:
 
-\[
+$$
 
 p(\omega)=\frac{\cos\theta}{\pi}
 
-\]
+$$
 
 ### GGX / Cook-Torrance Metal
 
 Metallic surfaces use a microfacet model:
 
-\[
+$$
 
 f_r=\frac{D(h)F(v,h)G(l,v,h)}{4(n\cdot l)(n\cdot v)}
 
-\]
+$$
 
 The implementation includes GGX distribution, Fresnel response, Smith masking-shadowing, roughness control, half-vector sampling, and GGX PDF evaluation.
 
@@ -340,11 +340,11 @@ Diffuse surfaces use cosine-weighted sampling:
             Diffuse continuation
 ```
 
-\[
+$$
 
 p(\omega)=\frac{\cos\theta}{\pi}
 
-\]
+$$
 
 Direct illumination is estimated separately with one power-weighted area-light sample and a visibility ray per non-delta surface.
 
@@ -456,7 +456,7 @@ Pixel 2  --> CUDA Thread 2
 Pixel N  --> CUDA Thread N
 ```
 
-For width \(W\), height \(H\), and \(S\) samples per pixel:
+For width $W$, height $H$, and $S$ samples per pixel:
 
 \[
 
@@ -707,7 +707,6 @@ AetherTrace/
 ├── assets/
 │   └── final_render_img.png
 ├── include/
-├── output/
 ├── src/
 │   └── main.cu
 ├── .gitignore
